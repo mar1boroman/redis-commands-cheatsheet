@@ -1,0 +1,241 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta description="description" content="Redis Commands Cheatsheet" />
+    <title>Redis Cheatsheet</title>
+
+    <!-- Google fonts CSS  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+    <link href="custom_css.css" rel="stylesheet" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"
+      integrity="sha512-SGWgwwRA8xZgEoKiex3UubkSkV1zSE1BS6O4pXcaxcNtUlQsOmOmhVnDwIvqGRfEmuz83tIGL13cXMZn6upPyg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Data tables Package CDN-->
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/af-2.4.0/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/fh-3.2.4/r-2.3.0/rg-1.2.0/sc-2.0.7/sb-1.3.4/sp-2.0.2/sl-1.4.0/sr-1.1.1/datatables.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/af-2.4.0/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/fh-3.2.4/r-2.3.0/rg-1.2.0/sc-2.0.7/sb-1.3.4/sp-2.0.2/sl-1.4.0/sr-1.1.1/datatables.min.js"
+    ></script>
+    <script type="text/javascript" src="tabular.js"></script>
+    <script type="text/javascript" src="cli.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body>
+    <div id="title-block" class="display-6 text-muted">
+      <span style="color: #802392; font-weight: bolder">Redis</span>
+      <span style="font-weight: lighter">Commands Cheatsheet</span>
+    </div>
+    <div id="title-footer" class="text-muted">
+      <p style="font-weight: lighter; margin-bottom: 0">
+        Quick reference with examples
+      </p>
+      <p style="font-weight: lighter">
+        This is <b>NOT</b> the official documentation, please refer the offical
+        documentation at
+        <a href="https://redis.io/commands/">https://redis.io/commands/</a>
+      </p>
+    </div>
+
+    <hr />
+
+    <div id="container-cheatsheet">
+      <table id="table-cheatsheet" class="table table-small table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>CATEGORY</th>
+            <th>COMMAND</th>
+            <th>DESCRIPTION</th>
+            <th>TIME_COMPLEXITY</th>
+            <th>AVAILABILITY</th>
+            <th>ACL_CATEGORIES</th>
+            <!-- <th>COMMAND_SYNTAX</th>
+            <th>EXAMPLES</th> -->
+          </tr>
+        </thead>
+        <tbody id="rdtbl"></tbody>
+      </table>
+    </div>
+
+    <br />
+    <hr />
+
+    <footer>
+      <div
+        class="col-md-12 d-flex d-block-inline justify-content-center text-center"
+      >
+        <div class="d-flex inline-block m-2">
+          <script
+            src="https://platform.linkedin.com/in.js"
+            type="text/javascript"
+          >
+            lang: en_US
+          </script>
+          <script type="IN/Share" data-url="#"></script>
+        </div>
+        <div class="d-flex inline-block m-2">
+          <a
+            class="github-button"
+            href="#"
+            data-icon="octicon-star"
+            aria-label=""
+            >Star</a
+          >
+        </div>
+        <div class="d-flex inline-block m-2">
+          <a
+            class="github-button"
+            href="#"
+            data-icon="octicon-repo-forked"
+            aria-label=""
+            >Fork</a
+          >
+        </div>
+        <div class="d-flex inline-block m-2">
+          <a
+            class="github-button"
+            href="https://github.com/mar1boroman"
+            aria-label="Follow @mar1boroman on GitHub"
+            >Follow @mar1boroman</a
+          >
+        </div>
+        <div class="d-flex inline-block m-2">
+          <a
+            href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+            class="twitter-share-button"
+            data-text="Redis Commands Quick Reference"
+            data-url="#"
+            data-hashtags="#redis #cheatsheet #quick-reference"
+            data-show-count="false"
+            >Tweet</a
+          >
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"
+          ></script>
+        </div>
+      </div>
+
+      <div
+        class="col-md-12 d-flex d-block-inline justify-content-center text-center"
+      >
+        Made with <span style="color: #e63946">&hearts;</span>
+      </div>
+    </footer>
+
+    <br />
+    <script>
+      const fileUrl = "Redis_Commands_Cheatsheet_ListExamples.csv";
+      Papa.parse(fileUrl, {
+        download: true,
+        complete: function (result) {
+          tbl = result.data;
+          tbl.forEach((r) => {
+            let row = document.createElement("tr");
+
+            // r.slice(0, -1).forEach((value) => {
+            //   let cell = document.createElement("td");
+
+            //   cell.innerHTML = value;
+            //   row.appendChild(cell);
+            // });
+
+            s = r.slice(0, -1);
+
+            category_format = s[0];
+            if (category_format == "BF") {
+              category_format = "Bloom Filters";
+            } else if (category_format == "CF") {
+              category_format = "Cuckoo Filters";
+            } else if (category_format == "CMS") {
+              category_format = "Count-Min Sketch";
+            }
+
+            complexity = s[4];
+            if (complexity == "") {
+              complexity = "Check Documentation";
+            } else if (complexity == "N/A") {
+              complexity = "Check Documentation";
+            }
+
+            tx_list = [
+              "", // Open-Close
+              category_format, // Category
+              '<a href="' + s[3] + '" target = "_blank">' + s[1] + "</a>", // Command with link
+              s[2], // Description
+              complexity, // Time Complexity
+              s[5], // Availability
+              s[6], // ACL Category
+              //   s[7], // Command Syntax
+            ];
+
+            tx_list.forEach((value) => {
+              let cell = document.createElement("td");
+
+              cell.innerHTML = value;
+              row.appendChild(cell);
+            });
+
+            let example_cell = document.createElement("td");
+
+            command_str = "";
+            var cmd_list = [];
+            r.slice(-1).forEach((e) => {
+              if (JSON.parse(e)) {
+                JSON.parse(e).forEach((c) => {
+                  command_str += c + "<br>";
+                  cmd_list.push(c);
+                });
+              }
+            });
+
+            row.setAttribute("examples-list", cmd_list);
+            row.setAttribute("command-syntax", s[7]);
+
+            document.getElementById("rdtbl").appendChild(row);
+
+            //console.log(cmd_list);
+            // This cmd_list will be used later to dynamically send commands to the cli.redis.io redis web shell
+          });
+        },
+      });
+    </script>
+  </body>
+</html>

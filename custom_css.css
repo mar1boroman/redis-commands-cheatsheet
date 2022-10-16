@@ -1,0 +1,71 @@
+#container-cheatsheet {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#title-block {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+}
+#title-footer {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Copied & Modified from Redis docs source */
+.redis-cli {
+  width: 500px;
+  height: 20rem;
+  overflow-y: auto;
+  border-radius: 00.75rem;
+  /* border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem; */
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: Fira Code, SF Mono, ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, liberation mono, courier new, monospace;
+  --tw-text-opacity: 1;
+  color: rgb(250 250 250 / var(--tw-text-opacity));
+}
+
+.redis-cli > pre {
+  white-space: pre-wrap;
+}
+
+.prose .redis-cli {
+  height: auto;
+}
+
+.prose .redis-cli > pre {
+  margin: 0;
+  background-color: transparent;
+  padding: 0;
+  --tw-text-opacity: 1;
+  color: rgb(250 250 250 / var(--tw-text-opacity));
+}
+
+.redis-cli > .prompt {
+  font-size: 0.875em;
+  display: flex;
+}
+
+.redis-cli > .prompt > span {
+  white-space: pre-wrap;
+}
+
+.redis-cli > .prompt > input {
+  flex: auto;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font: inherit;
+  color: inherit;
+}
